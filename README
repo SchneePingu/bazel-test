@@ -1,0 +1,5 @@
+C++ project to test Bazel and gtest framework
+
+1. Configure and build project
+
+> make
