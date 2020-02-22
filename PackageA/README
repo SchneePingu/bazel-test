@@ -1,0 +1,9 @@
+C++ static library configured with CMake\Make
+
+1. Configure library
+
+> cmake .
+
+2. Build library
+
+> make

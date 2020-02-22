@@ -1,0 +1,15 @@
+C++ executable configured with Bazel
+
+
+1. Build project
+
+bazel build main
+bazel build tests
+
+2. Test project
+
+bazel test tests
+
+3. Run main
+
+bazel run main
