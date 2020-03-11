@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd PackageB
+bazel test tests
+TESTS_EXIT_CODE=$?
+exit ${TESTS_EXIT_CODE}
