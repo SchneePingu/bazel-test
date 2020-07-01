@@ -1,0 +1,11 @@
+'PackageA' provides a C++ static library configured with CMake\Make
+
+1. Configure project
+--------------------
+
+> cmake CMakeLists.txt
+
+2. Build project
+----------------
+
+> make
