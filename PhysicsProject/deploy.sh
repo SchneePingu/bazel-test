@@ -10,9 +10,18 @@ function cleanup() {
 }
 
 function exitWithError() {
-    echo "ERROR: cannot find '$1' folder"
+    echo "ERROR: cannot find '$1' folder" 1>&2
     echo "Deployment failed"
     exit 1
+}
+
+function deployDirectory() {
+if [ -d $1 ]; then
+    cp -r $1 "$PHYSICSLIBPATH/"
+else
+    cleanup
+    exitWithError $1
+fi
 }
 
 echo "Deployment started"
@@ -20,20 +29,7 @@ cleanup
 
 mkdir $PHYSICSLIBPATH
 
-LIBDIR="$BASEDIR/lib"
-if [ -d $LIBDIR ]; then
-    cp -r $LIBDIR "$PHYSICSLIBPATH/"
-else
-    cleanup
-    exitWithError $LIBDIR
-fi
+deployDirectory "$BASEDIR/lib"
+deployDirectory "$BASEDIR/include"
 
-INCLUDEDIR="$BASEDIR/include"
-if [ -d $INCLUDEDIR ]; then
-    cp -r $INCLUDEDIR "$PHYSICSLIBPATH/"
-else
-    cleanup
-    exitWithError $INCLUDEDIR
-fi
-
-echo "Deployment successful"
+echo "Library deployed to '$PHYSICSLIBPATH'"
