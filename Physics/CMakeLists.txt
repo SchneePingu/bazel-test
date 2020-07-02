@@ -13,3 +13,5 @@ add_library(${TARGETNAME} ${SOURCES})
 set_target_properties(${TARGETNAME} PROPERTIES PREFIX "")
 set_target_properties(${TARGETNAME} PROPERTIES OUTPUT_NAME "${TARGETNAME}Lib")
 set_target_properties(${TARGETNAME} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lib")
+
+add_custom_command(TARGET ${TARGETNAME} POST_BUILD COMMAND bash deploy.sh)
