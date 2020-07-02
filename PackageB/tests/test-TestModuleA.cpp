@@ -1,14 +1,14 @@
 #include "gtest/gtest.h"
-#include "core/moduleA.h"
+#include "physics/hydrogen.h"
 
 using namespace std;
-using namespace ModuleA;
+using namespace Physics;
+using namespace Constants;
 
 TEST(TestModuleA_Test, GetId) {
-    int id = 7;
-    TestModuleA testModuleA = TestModuleA(id);
+    Hydrogen hydrogen = Hydrogen();
 
-    GTEST_ASSERT_EQ(id, testModuleA.GetId());
+    GTEST_ASSERT_EQ(RydbergConstant, hydrogen.getBindingEnergy(1));
 }
 
 int main(int argc, char **argv) {

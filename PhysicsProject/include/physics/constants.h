@@ -3,7 +3,7 @@
 
 namespace Constants {
 
-const double RydbergConstant = -13.6; //eV
+const double RydbergConstant = 13.6; //eV (electron volt)
 
 }
 
