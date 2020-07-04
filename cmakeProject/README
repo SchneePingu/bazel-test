@@ -1,0 +1,17 @@
+C++ library configured with CMake\Make
+--------------------------------------
+
+To configure and build the project, run the following commands:
+
+> mkdir -p build
+
+> cd build
+
+> cmake ..
+
+> make
+
+
+HINT:
+Calling cmake from a temporary build folder, e.g. 'build', is advantageous
+for cleaning the project folder from temporary build files.

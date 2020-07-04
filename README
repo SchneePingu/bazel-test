@@ -1,9 +1,1 @@
-C++ project to test Bazel and gtest framework
-
-1. Configure and build project
-
-> make
-
-2. Setup git hooks
-
-> git config --local core.hooksPath .githooks/
+Just run 'make' and tidy up occasionally with 'make clean'.

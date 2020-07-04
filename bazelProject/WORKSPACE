@@ -1,9 +1,9 @@
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 new_local_repository(
-    name = "libPackageA",
-    path = "../PhysicsLib",
-    build_file = "@//:bazelLibs/BUILD.libPackageA",
+    name = "cmakeProjectLib",
+    path = "../cmakeProjectLib",
+    build_file = "@//:bazelLibs/BUILD.cmakeProjectLib",
 )
 
 git_repository(

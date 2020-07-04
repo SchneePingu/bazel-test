@@ -1,0 +1,31 @@
+C++ executable configured with Bazel
+------------------------------------
+
+
+1. Build the test
+-----------------
+
+> bazel build //tests:physicsLibTest
+
+
+2. Build the executable
+-----------------------
+
+> bazel build //:groundstate
+
+
+3. Test the project
+-------------------
+
+> bazel test //tests:physicsLibTest
+
+4. Run the executable
+---------------------
+
+> bazel run //:groundstate
+
+
+HINT:
+All the above steps can be summarized by the following commands:
+> bazel test ...
+> bazel run groundstate

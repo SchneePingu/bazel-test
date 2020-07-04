@@ -1,15 +1,22 @@
-all: PhysicsLib groundstate
+CMAKEPROJECT = cmakeProject
+BAZELPROJECT = bazelProject
+BUILDDIR = build
+LIBDIR = lib
+LIBSUFFIX = Lib
 
-PhysicsLib: Physics/build
-	cd Physics/build && cmake .. && make
+all: $(CMAKEPROJECT)$(LIBSUFFIX) groundstate
 
-Physics/build:
-	mkdir -p Physics/build
+$(CMAKEPROJECT)$(LIBSUFFIX): $(CMAKEPROJECT)/$(BUILDDIR)
+	cd $(CMAKEPROJECT)/$(BUILDDIR) && cmake .. && make
+
+$(CMAKEPROJECT)/$(BUILDDIR):
+	mkdir -p $(CMAKEPROJECT)/$(BUILDDIR)
 
 groundstate:
-	$(MAKE) -C PackageB
+	$(MAKE) -C $(BAZELPROJECT)
 
 clean:
-	rm -fr Physics/{build,lib}
-	rm -fr PhysicsLib
+	rm -rf $(CMAKEPROJECT)/$(BUILDDIR)
+	rm -rf $(CMAKEPROJECT)/$(LIBDIR)
+	rm -rf $(CMAKEPROJECT)$(LIBSUFFIX)
 	rm -f groundstate

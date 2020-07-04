@@ -1,8 +1,8 @@
 cc_test(
-    name = "tests",
+    name = "physicsLibTest",
     srcs = glob(["*.cpp"]),
     deps = [
-        "@libPackageA//:libs",
+        "@cmakeProjectLib//:physicsLib",
         "@googletest//:gtest_main",
     ],
 )

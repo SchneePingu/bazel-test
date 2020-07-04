@@ -1,13 +1,13 @@
 cc_library(
-    name = "libs",
+    name = "physicsLib",
     hdrs = glob(['include/**/*.h']),
     strip_include_prefix = "include",
-    deps = [":libs-import"],
+    deps = [":libs"],
     visibility = ["//visibility:public"],
 )
 
 cc_import(
-    name = "libs-import",
-    static_library = "lib/PhysicsLib.a",
+    name = "libs",
+    static_library = "lib/physicsLib.a",
     visibility = ["//visibility:public"],
 )
