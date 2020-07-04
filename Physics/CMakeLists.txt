@@ -14,4 +14,6 @@ set_target_properties(${TARGETNAME} PROPERTIES PREFIX "")
 set_target_properties(${TARGETNAME} PROPERTIES OUTPUT_NAME "${TARGETNAME}Lib")
 set_target_properties(${TARGETNAME} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lib")
 
-add_custom_command(TARGET ${TARGETNAME} POST_BUILD COMMAND bash deploy.sh)
+add_custom_target(deploy ALL COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/deploy.sh)
+add_dependencies(deploy ${TARGETNAME})
+
